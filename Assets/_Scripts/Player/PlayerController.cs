@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float _movementSpeed; 
     private float _horizontalInput;
-    private float _boundLeftX = -9.5f, _boundRightX = 0.5f;
     Vector3 screenPosition;
     private Camera mainCamera;
     bool wrapScreen;
