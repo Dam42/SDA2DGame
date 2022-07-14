@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D player;
     [SerializeField] private float movementSpeed;
+    [SerializeField] private SpriteRenderer sprite;
     private Camera mainCamera;
     private bool wrapScreen;
     private Vector3 screenPosition;
@@ -23,16 +25,29 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
 
+        if (player.velocity.y == 0 && Input.GetKeyDown(KeyCode.X)) InitJump();
         if (horizontalInput != 0) MovePlayer();
-        HandleScreenWrap();
-
         if (player.velocity.y < 0)
         {
             player.velocity += Vector2.up * fallingMultiplier * Time.deltaTime;
         }
 
+        HandleScreenWrap();
         if (wrapScreen)
             player.transform.localPosition = Camera.main.ViewportToWorldPoint(screenPosition);
+    }
+
+    private void InitJump()
+    {
+        player.AddForce(Vector2.up * 25, ForceMode2D.Impulse);
+    }
+
+    private void MovePlayer()
+    {
+        newPlayerVelocity.x = horizontalInput * movementSpeed;
+        newPlayerVelocity.y = player.velocity.y;
+        player.velocity = newPlayerVelocity;
+        sprite.flipX = horizontalInput > 0;
     }
 
     private void HandleScreenWrap()
@@ -53,12 +68,5 @@ public class PlayerController : MonoBehaviour
         {
             wrapScreen = false;
         }
-    }
-
-    private void MovePlayer()
-    {
-        newPlayerVelocity.x = horizontalInput * movementSpeed;
-        newPlayerVelocity.y = player.velocity.y;
-        player.velocity = newPlayerVelocity;
     }
 }
