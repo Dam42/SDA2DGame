@@ -1,26 +1,38 @@
-using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private float _movementSpeed; 
-    private float _horizontalInput;
+    [SerializeField] private Rigidbody2D player;
+    [SerializeField] private float movementSpeed; 
+    private float horizontalInput;
     Vector3 screenPosition;
     private Camera mainCamera;
-    bool wrapScreen;
+    private bool wrapScreen;
+    private float fallingMultiplier;
+    private Vector2 newPlayerVelocity;
 
     private void Awake()
     {
         mainCamera = Camera.main;
+
+        //Set gravity multipliers for falling and for low jump
+        fallingMultiplier = Physics2D.gravity.y * (3 - 1);
     }
 
     private void Update()
     {
-        _horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxis("Horizontal");
 
-        if (_horizontalInput != 0) MovePlayer();
+        if (horizontalInput != 0) MovePlayer();
         HandleScreenWrap();
+
+        if (player.velocity.y < 0)
+        {
+            player.velocity += Vector2.up * fallingMultiplier * Time.deltaTime;
+        }
+
+        if (wrapScreen)
+            player.transform.localPosition = Camera.main.ViewportToWorldPoint(screenPosition);
     }
 
     private void HandleScreenWrap()
@@ -41,21 +53,12 @@ public class PlayerController : MonoBehaviour
         {
             wrapScreen = false;
         }
-
-        if (screenPosition.y < 0f)
-        {
-            //Debug.Log("Player fallen off");
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (wrapScreen)
-            rb.MovePosition(Camera.main.ViewportToWorldPoint(screenPosition));
     }
 
     private void MovePlayer()
     {
-        rb.velocity = new Vector2(_horizontalInput * _movementSpeed, rb.velocity.y);
+        newPlayerVelocity.x = horizontalInput * movementSpeed;
+        newPlayerVelocity.y = player.velocity.y;
+        player.velocity = newPlayerVelocity;
     }
 }
