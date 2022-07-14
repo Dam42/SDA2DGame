@@ -3,13 +3,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D player;
-    [SerializeField] private float movementSpeed; 
-    private float horizontalInput;
-    Vector3 screenPosition;
+    [SerializeField] private float movementSpeed;
     private Camera mainCamera;
     private bool wrapScreen;
-    private float fallingMultiplier;
+    private Vector3 screenPosition;
     private Vector2 newPlayerVelocity;
+    private float horizontalInput;
+    private float fallingMultiplier;
 
     private void Awake()
     {
