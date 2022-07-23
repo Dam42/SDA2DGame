@@ -29,6 +29,7 @@ namespace FrogNinja.UI
             }
 
             currentlyOpenWindow = mainMenu;
+            currentlyOpenWindow.ShowWindow();
         }
 
         public void ShowFail()
