@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
             player.velocity += Vector2.up * fallingMultiplier * Time.deltaTime;
         }
 
+        EventManager.OnUpdatePlayerPosition(transform.position);
+
         HandleScreenWrap();
         if (wrapScreen)
             player.transform.localPosition = Camera.main.ViewportToWorldPoint(screenPosition);
