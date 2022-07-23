@@ -1,5 +1,6 @@
 using FrogNinja.States;
 using UnityEngine;
+using FrogNinja.UI;
 
 namespace FrogNinja.States
 {
@@ -13,6 +14,7 @@ namespace FrogNinja.States
         public override void EnterState()
         {
             Debug.Log("Entered State");
+            UIManager.Instance.ShowHUD();
         }
 
         public override void UpdateState()

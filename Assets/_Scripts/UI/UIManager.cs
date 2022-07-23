@@ -7,6 +7,7 @@ namespace FrogNinja.UI
         public static UIManager Instance;
 
         [SerializeField] MainMenuWindow mainMenu;
+        [SerializeField] HUDWindow hud;
 
         BaseWindow currentlyOpenWindow;
 
@@ -29,6 +30,21 @@ namespace FrogNinja.UI
             }
 
             currentlyOpenWindow = mainMenu;
+            currentlyOpenWindow.ShowWindow();
+        }
+
+        public void ShowHUD()
+        {
+            HideAndSwitchWindow(hud);
+        }
+
+        private void HideAndSwitchWindow(BaseWindow windowtoSwitchTo)
+        {
+            if (currentlyOpenWindow != null)
+                currentlyOpenWindow.HideWindow();
+
+            currentlyOpenWindow = windowtoSwitchTo;
+
             currentlyOpenWindow.ShowWindow();
         }
 

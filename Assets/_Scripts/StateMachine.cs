@@ -6,7 +6,7 @@ namespace FrogNinja.States
     {
         private BaseState _currentState;
 
-        private void Awake()
+        private void Start()
         {
             EnterState(new MenuState(this));
         }

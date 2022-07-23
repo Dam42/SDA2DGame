@@ -6,7 +6,7 @@ namespace FrogNinja.UI
     {
         public void Button_PlayGame()
         {
-
+            EventManager.EnterGameplayButton();
         }
 
         public void Button_OpenSettings()
