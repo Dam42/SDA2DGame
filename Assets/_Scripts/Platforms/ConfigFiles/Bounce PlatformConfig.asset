@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb2b190141f94545a8f67ab8952b9b1, type: 3}
+  m_Name: Bounce PlatformConfig
+  m_EditorClassIdentifier: 
+  Platforms:
+  - {fileID: 4311719118712348172, guid: 9cdea3b2b7eddd74fa485b4e0efafdec, type: 3}
+  - {fileID: 1144061804823322761, guid: 41032ba7f4e8e384b9c3f8c94493e8ae, type: 3}
+  defaultYIncrease: 1

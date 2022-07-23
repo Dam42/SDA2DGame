@@ -15,15 +15,22 @@ namespace FrogNinja.States
         {
             Debug.Log("Entered State lose");
             UIManager.Instance.ShowDeathScreen();
+            EventManager.EnterGameplay += EventManager_EnterGameplay;
         }
 
         public override void UpdateState()
         {
         }
 
+        private void EventManager_EnterGameplay()
+        {
+            TransitionToGame();
+        }
+
         public override void ExitState()
         {
             Debug.Log("Exited State lose");
+            EventManager.EnterGameplay -= EventManager_EnterGameplay;
         }
 
         private void TransitionToGame()
@@ -31,7 +38,7 @@ namespace FrogNinja.States
             myStateMachine.EnterState(new GameState(myStateMachine));
         }
 
-        private void TransitionToMenu()
+        public void TransitionToMenu()
         {
             myStateMachine.EnterState(new MenuState(myStateMachine));
         }

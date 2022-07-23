@@ -26,7 +26,7 @@ namespace FrogNinja.UI
 
         public void Button_RestartGame()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            EventManager.EnterGameplayButton();
         }
 
         public void Button_ReturnToMenu()
