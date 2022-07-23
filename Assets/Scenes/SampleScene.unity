@@ -1330,7 +1330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 940093436}
-  movementSpeed: 13
+  movementSpeed: 15
   sprite: {fileID: 940093438}
 --- !u!95 &940093441
 Animator:
