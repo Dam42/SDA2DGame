@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace FrogNinja.UI
 {
-    public class MainMenuWindow : MonoBehaviour
+    public class MainMenuWindow : BaseWindow
     {
         public void Button_PlayGame()
         {
@@ -16,7 +16,7 @@ namespace FrogNinja.UI
 
         public void Button_ExitGame()
         {
-
+            Application.Quit();
         }
 
     }

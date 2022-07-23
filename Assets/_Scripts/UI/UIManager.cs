@@ -6,6 +6,10 @@ namespace FrogNinja.UI
     {
         public static UIManager Instance;
 
+        [SerializeField] MainMenuWindow mainMenu;
+
+        BaseWindow currentlyOpenWindow;
+
         private void Awake()
         {
             if (Instance != null)
@@ -15,6 +19,16 @@ namespace FrogNinja.UI
             }
             Debug.Log($"{name} is Initialized");
             Instance = this;
+        }
+
+        public void ShowMainMenu()
+        {
+            if(currentlyOpenWindow != null)
+            {
+                currentlyOpenWindow.HideWindow();
+            }
+
+            currentlyOpenWindow = mainMenu;
         }
 
         public void ShowFail()

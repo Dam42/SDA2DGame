@@ -17,7 +17,6 @@ namespace FrogNinja.States
 
         public override void UpdateState()
         {
-            Debug.Log("Updated State");
         }
 
         public override void ExitState()

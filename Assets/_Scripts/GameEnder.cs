@@ -1,7 +1,6 @@
 using UnityEngine;
+using FrogNinja.UI;
 
-namespace FrogNinja.UI
-{
     public class GameEnder : MonoBehaviour
     {
         private void OnCollisionEnter2D(Collision2D collision)
@@ -13,4 +12,3 @@ namespace FrogNinja.UI
         }
     }
 
-}
