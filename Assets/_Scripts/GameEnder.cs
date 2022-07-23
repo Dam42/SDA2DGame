@@ -7,7 +7,6 @@ using FrogNinja.UI;
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                UIManager.Instance.ShowFail();
                 EventManager.OnPlayerFallenOff();
             }
         }

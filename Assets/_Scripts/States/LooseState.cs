@@ -1,4 +1,5 @@
 using FrogNinja.States;
+using FrogNinja.UI;
 using UnityEngine;
 
 namespace FrogNinja.States
@@ -12,7 +13,8 @@ namespace FrogNinja.States
 
         public override void EnterState()
         {
-            Debug.Log("Entered State");
+            Debug.Log("Entered State lose");
+            UIManager.Instance.ShowDeathScreen();
         }
 
         public override void UpdateState()
@@ -21,7 +23,7 @@ namespace FrogNinja.States
 
         public override void ExitState()
         {
-            Debug.Log("Exited State");
+            Debug.Log("Exited State lose");
         }
 
         private void TransitionToGame()

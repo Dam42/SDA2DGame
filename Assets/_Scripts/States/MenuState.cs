@@ -13,7 +13,7 @@ namespace FrogNinja.States
 
         public override void EnterState()
         {
-            Debug.Log("Entered State");
+            Debug.Log("Entered State menu");
             UIManager.Instance.ShowMainMenu();
             EventManager.EnterGameplay += EventManager_EnterGameplay;
         }
@@ -29,7 +29,7 @@ namespace FrogNinja.States
 
         public override void ExitState()
         {
-            Debug.Log("Exited State");
+            Debug.Log("Exited State menu");
 
             EventManager.EnterGameplay -= EventManager_EnterGameplay;
         }
