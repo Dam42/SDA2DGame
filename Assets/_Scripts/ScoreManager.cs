@@ -4,6 +4,8 @@ public class ScoreManager : MonoBehaviour
 {
     const string HIGH_SCORE_KEY = "high_score";
     int currentScore, highScore;
+    public int CurrentScore { get { return currentScore; } }
+    public int HighScore { get { return highScore; } }
 
     [SerializeField] int scoreMultiplier = 100;
     float maxPositionY;
