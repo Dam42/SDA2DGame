@@ -1,12 +1,16 @@
 using UnityEngine;
 
-public class GameEnder : MonoBehaviour
+namespace FrogNinja.UI
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    public class GameEnder : MonoBehaviour
     {
-        if(collision.gameObject.CompareTag("Player"))
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            Debug.Log("Git Gud");
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                UIManager.Instance.ShowFail();
+            }
         }
     }
+
 }
