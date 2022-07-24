@@ -20,6 +20,12 @@ namespace FrogNinja.Enemies {
         {
             if(collision.gameObject.CompareTag("Player")) 
                 EventManager.OnEnemeyHitPlayer();
+
+            if(collision.gameObject.CompareTag("Projectile"))
+            {
+                rb.gameObject.SetActive(false);
+                EventManager.OnEnemeyDeath();
+            }
         }
     }
 }

@@ -71,6 +71,9 @@ TextureImporter:
   - first:
       213: 1092426612591265901
     second: Fall_4
+  - first:
+      213: -7652743772864786094
+    second: needle
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -674,6 +677,27 @@ TextureImporter:
       bones: []
       spriteID: d688faa5734192f00800000000000000
       internalID: 1092426612591265901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: needle
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 5405
+        width: 281
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 251df45a51efbc590800000000000000
+      internalID: -7652743772864786094
       vertices: []
       indices: 
       edges: []

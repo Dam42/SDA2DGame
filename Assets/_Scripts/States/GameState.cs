@@ -1,6 +1,6 @@
-using FrogNinja.States;
 using UnityEngine;
 using FrogNinja.UI;
+using FrogNinja.Player;
 
 namespace FrogNinja.States
 {
@@ -17,6 +17,8 @@ namespace FrogNinja.States
             UIManager.Instance.ShowHUD();
             EventManager.PlayerLost += EventManager_PlayerLost;
             EventManager.EnemyHitPlayer += EventManager_EnemyHitPlayer;
+            PlayerController playerController = GameObject.FindObjectOfType<PlayerController>();
+            playerController.canMove = true;
         }
 
         public override void UpdateState()
@@ -27,6 +29,8 @@ namespace FrogNinja.States
         {
             EventManager.PlayerLost -= EventManager_PlayerLost;
             EventManager.EnemyHitPlayer -= EventManager_EnemyHitPlayer;
+            PlayerController playerController = GameObject.FindObjectOfType<PlayerController>();
+            playerController.canMove = false;
             Debug.Log("Exited State game");
         }
 
