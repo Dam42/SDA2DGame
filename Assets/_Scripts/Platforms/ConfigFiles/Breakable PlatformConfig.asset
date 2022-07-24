@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Platforms:
   - {fileID: 1310062169597908903, guid: 1c04731fdf73d1c428ea00be0dc65b0c, type: 3}
-  defaultYIncrease: 1
+  defaultYIncrease: 1.5

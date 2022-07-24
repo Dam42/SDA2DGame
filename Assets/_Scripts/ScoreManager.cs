@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
     {
         highScore = PlayerPrefs.GetInt(HIGH_SCORE_KEY, 0);
 
-        EventManager.PlayerFallenOff += EventManager_PlayerFallenOff;
+        EventManager.PlayerLost += EventManager_PlayerFallenOff;
         EventManager.EnterGameplay += EventManager_EnterGameplay;
         EventManager.PlayerPositionUpdate += EventManager_PlayerPositionUpdate;
     }
@@ -64,6 +64,6 @@ public class ScoreManager : MonoBehaviour
     {
         EventManager.PlayerPositionUpdate -= EventManager_PlayerPositionUpdate;
         EventManager.EnterGameplay -= EventManager_EnterGameplay;
-        EventManager.PlayerFallenOff -= EventManager_PlayerFallenOff;
+        EventManager.PlayerLost -= EventManager_PlayerFallenOff;
     }
 }

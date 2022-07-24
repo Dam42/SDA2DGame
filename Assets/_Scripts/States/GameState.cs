@@ -15,7 +15,8 @@ namespace FrogNinja.States
         {
             Debug.Log("Entered State game");
             UIManager.Instance.ShowHUD();
-            EventManager.PlayerFallenOff += EventManager_PlayerFallenOff;
+            EventManager.PlayerLost += EventManager_PlayerLost;
+            EventManager.EnemyHitPlayer += EventManager_EnemyHitPlayer;
         }
 
         public override void UpdateState()
@@ -24,11 +25,17 @@ namespace FrogNinja.States
 
         public override void ExitState()
         {
-            EventManager.PlayerFallenOff -= EventManager_PlayerFallenOff;
+            EventManager.PlayerLost -= EventManager_PlayerLost;
+            EventManager.EnemyHitPlayer -= EventManager_EnemyHitPlayer;
             Debug.Log("Exited State game");
         }
 
-        private void EventManager_PlayerFallenOff()
+        private void EventManager_PlayerLost()
+        {
+            TransitionToLoose();
+        }
+
+        private void EventManager_EnemyHitPlayer()
         {
             TransitionToLoose();
         }

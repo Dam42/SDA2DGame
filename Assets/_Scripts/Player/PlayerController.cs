@@ -27,6 +27,13 @@ public class PlayerController : MonoBehaviour
 
         if (player.velocity.y == 0 && Input.GetKeyDown(KeyCode.X)) InitJump();
         if (horizontalInput != 0) MovePlayer();
+        else
+        {
+            newPlayerVelocity.x = 0;
+            newPlayerVelocity.y = player.velocity.y;
+            player.velocity = newPlayerVelocity;
+        }
+
         if (player.velocity.y < 0)
         {
             player.velocity += Vector2.up * fallingMultiplier * Time.deltaTime;
