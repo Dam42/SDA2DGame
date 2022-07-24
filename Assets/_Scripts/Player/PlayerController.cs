@@ -26,7 +26,11 @@ namespace FrogNinja.Player
 
         private void Update()
         {
-            if (canMove == false) return;
+            if (canMove == false) {
+                player.velocity = new Vector2(0, 0);
+                return;
+            }
+           
 
             horizontalInput = Input.GetAxis("Horizontal");
 

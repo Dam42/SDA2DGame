@@ -4,11 +4,14 @@ namespace FrogNinja.Player {
     public class PlayerShotting : MonoBehaviour
     {
         [SerializeField] PlayerProjectile projectile;
+        [SerializeField] Animator anim;
         PlayerController playerController;
+        Camera mainCamera;
 
         private void Awake()
         {
             playerController = GetComponent<PlayerController>();
+            mainCamera = Camera.main;
         }
 
         private void Update()
@@ -23,7 +26,13 @@ namespace FrogNinja.Player {
 
             Vector3 direction = Vector3.up;
 
-            spawnedProjectile.Shoot(direction);
+            Vector3 worldMousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            worldMousePosition.z = 0;
+
+            direction = worldMousePosition - transform.position;
+
+            //anim.CrossFade("Throw", 0);
+            spawnedProjectile.Shoot(direction.normalized);
         }
     }
 }

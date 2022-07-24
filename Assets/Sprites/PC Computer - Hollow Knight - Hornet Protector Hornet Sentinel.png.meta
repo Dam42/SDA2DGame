@@ -74,6 +74,21 @@ TextureImporter:
   - first:
       213: -7652743772864786094
     second: needle
+  - first:
+      213: 7306705587221883198
+    second: throw_1
+  - first:
+      213: -6384209479031082971
+    second: throw_2
+  - first:
+      213: -7286415122487525261
+    second: throw_3
+  - first:
+      213: -7315858539564873035
+    second: throw_
+  - first:
+      213: -319168317033295407
+    second: throw_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -690,7 +705,7 @@ TextureImporter:
         width: 281
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -698,6 +713,111 @@ TextureImporter:
       bones: []
       spriteID: 251df45a51efbc590800000000000000
       internalID: -7652743772864786094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_1
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 6086
+        width: 279
+        height: 214
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39e8bcd402a66560800000000000000
+      internalID: 7306705587221883198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_2
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 6086
+        width: 278
+        height: 214
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 520bba6cd4bb667a0800000000000000
+      internalID: -6384209479031082971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_3
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 6086
+        width: 278
+        height: 214
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 370c81a1d0471ea90800000000000000
+      internalID: -7286415122487525261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 5660
+        width: 152
+        height: 187
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba4a3a5b69d87a90800000000000000
+      internalID: -7315858539564873035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_5
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 5660
+        width: 152
+        height: 187
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1dbaf4b16129bf0800000000000000
+      internalID: -319168317033295407
       vertices: []
       indices: 
       edges: []

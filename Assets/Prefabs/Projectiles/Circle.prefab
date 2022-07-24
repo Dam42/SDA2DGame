@@ -99,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   rb: {fileID: 3666786144686519504}
+  clip: {fileID: 8300000, guid: d1cd6f47fc1153942b95ce916299e93a, type: 3}
+  clip2: {fileID: 8300000, guid: 04df9c9e91b5c454aa4474b17c05ef15, type: 3}
 --- !u!61 &3666786144686519505
 BoxCollider2D:
   m_ObjectHideFlags: 0

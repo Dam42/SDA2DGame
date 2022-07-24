@@ -6,6 +6,8 @@ namespace FrogNinja.Player
     {
         [SerializeField] float speed;
         [SerializeField] Rigidbody2D rb;
+        [SerializeField] AudioClip clip;
+        [SerializeField] AudioClip clip2;
         Vector3 direction = Vector3.zero;
 
         private void Awake()
@@ -16,6 +18,7 @@ namespace FrogNinja.Player
         {
             direction = newDirection;
             Invoke("Die", 3);
+            AudioSystem.PlaySFX_Global(clip2);
         }
 
         private void FixedUpdate()
@@ -27,6 +30,7 @@ namespace FrogNinja.Player
         {
             if(collision.gameObject.CompareTag("Enemy"))
             {
+                AudioSystem.PlaySFX_Global(clip);
                 Die();
             }
         }

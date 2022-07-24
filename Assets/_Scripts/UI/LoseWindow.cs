@@ -6,6 +6,7 @@ namespace FrogNinja.UI
     public class LoseWindow : BaseWindow {
 
         [SerializeField] GameObject textObjectHolder;
+        [SerializeField] AudioClip clip;
         [SerializeField] private TMPro.TMP_Text currentScore;
         [SerializeField] private TMPro.TMP_Text highScore;
 
@@ -22,6 +23,8 @@ namespace FrogNinja.UI
 
             currentScore.text = $"Current Score: {scoreManager.CurrentScore}";
             highScore.text = $"High Score: {scoreManager.HighScore}";
+
+            AudioSystem.PlaySFX_Global(clip);
         }
 
         public void Button_RestartGame()
